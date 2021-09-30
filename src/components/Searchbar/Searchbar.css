@@ -1,0 +1,16 @@
+.searchbar-container {
+  margin: 20px auto 0px auto;
+  width: 60%;
+}
+
+.searchbar-container input {
+  width: 100%;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1000px) {
+  .searchbar-container {
+    width: 90%;
+  }
+}
