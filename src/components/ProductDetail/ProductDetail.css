@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amatic+SC&family=Vollkorn&display=swap");
+
+.singleItemDetail-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.80);
+  text-align: center;
+  font-family: "Abril Fatface", cursive;
+  font-family: "Amatic SC", cursive;
+  font-family: "Vollkorn", serif;
+  margin: 80px auto 0px;
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+}
+
+.singleItem-text {
+  text-align: center;
+  padding: 20px;
+}
+
+.singleItem-container:hover {
+  color: wheat;
+  opacity: 0.7;
+}
+
+#item-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+}

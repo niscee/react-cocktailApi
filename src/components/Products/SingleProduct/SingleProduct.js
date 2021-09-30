@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import'./SingleProduct.css';
 
 const SingleProduct = ({ cocktail }) => {
@@ -8,6 +9,7 @@ const SingleProduct = ({ cocktail }) => {
         <div className="singleItem-text">
             <p id="item-name">{cocktail.strDrink} (cocktail.strAlcoholic)</p>
             <p id="item-instruct">{cocktail.strInstructions}</p>
+            <Link to={`cocktail/${cocktail.idDrink}`}><button style={{backgroundColor: "gold", padding: "5px"}}>DETAILS</button></Link>
         </div>
     </div>
     );
