@@ -64,6 +64,7 @@ export const CocktailState = (props) => {
     <MyContext.Provider
       value={{
         loading,
+        setLoading,
         cocktails,
         searchTerm,
         changeTerm,
