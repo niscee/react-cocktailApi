@@ -8,7 +8,7 @@ const Loading = () => {
     <div className="loading-container">
       <Loader
         type="Puff"
-        color="gold"
+        color="green"
         height={100}
         width={100}
       />

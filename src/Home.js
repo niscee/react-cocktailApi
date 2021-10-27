@@ -1,13 +1,12 @@
 import React from "react";
-import Products from "./components/Products/Products";
-import Searchbar from "./components/Searchbar/Searchbar";
+import Coins from "./components/Coin/Coins";
+
 
 
 const Home = () => {
   return (
     <>
-      <Searchbar />
-      <Products />
+      <Coins />
     </>
   );
 };

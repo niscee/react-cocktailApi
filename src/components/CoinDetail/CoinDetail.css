@@ -1,0 +1,71 @@
+.singleItemDetail-container {
+  text-align: center;
+  margin: 80px auto 0px;
+  width: 70%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  color: black;
+  padding: 40px;
+  grid-gap: 20px;
+}
+
+.singleItem-text {
+  padding: 20px;
+}
+
+.singleItem-text h2 {
+  font-weight: bold;
+}
+
+.singleItem-container:hover {
+  color: wheat;
+  opacity: 0.7;
+}
+
+#item-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#rank {
+  background-color: black;
+  color: white;
+  padding: 5px;
+}
+
+#cprice {
+  background-color: black;
+  color: white;
+  padding: 5px;
+}
+
+#homepage {
+  background-color: red;
+  color: white;
+  padding: 5px;
+}
+
+#tsupply {
+  background-color: #04aa6d;
+  color: white;
+  padding: 5px;
+}
+
+.singleItemDetail-container div button {
+  padding: 5px;
+  width: 100%;
+}
+
+.coin-description {
+  overflow: auto;
+  height: 600px;
+}
+
+@media screen and (max-width: 900px) {
+  .singleItemDetail-container {
+    grid-template-columns: 100%;
+    margin: 20px auto 0px;
+    width: 90%;
+    padding: 0px;
+  }
+}

@@ -1,34 +1,42 @@
 nav {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: gold;
   font-weight: bold;
-  padding: 10px;
+  padding: 30px;
   position: sticky;
   top: 0;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  opacity: 1;
-  background-color: rgb(52, 86, 139);
   z-index: 100;
+  background-color: #282c34;
 }
 
-.nav-appname p {
-  font-size: 1.8rem;
+.nav-appname{
+  text-align: center;
 }
 
-.nav-menu ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
+.nav-appname a {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
 }
 
-.nav-menu li {
-  padding: 15px;
-  font-size: 1.2rem;
-  color: gold;
-  text-decoration: inherit;
+.nav-appname li {
+  list-style-type: none;
 }
+
+.searchbar-container {
+  margin: 50px auto;
+  width: 60%;
+}
+
+.searchbar-container input {
+  width: 100%;
+  padding: 10px;
+  border-radius:10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .searchbar-container {
+    width: 90%;
+  }
+}
+
 

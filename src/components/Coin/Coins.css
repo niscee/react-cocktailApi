@@ -1,0 +1,63 @@
+.item-container {
+  width: 85%;
+  margin: 40px auto;
+  grid-gap: 20px;
+  color: black;
+  position: relative;
+  height: 750px;
+  overflow: auto;
+  font-size: 0.9rem;
+}
+
+
+#coins {
+  width: 100%;
+}
+
+#coins th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #04aa6d;
+  color: white;
+}
+
+thead {
+  color: grey;
+}
+
+#coins td,
+#coins th {
+  padding: 8px;
+}
+
+
+#coins td,
+#coins tr {
+  text-align: center;
+}
+
+
+
+#coins tr:hover {
+  background-color: #ddd;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1000px) {
+  .item-container {
+    width: 95%;
+  }
+
+  #coins {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .item-container {
+    width: 95%;
+  }
+
+  #coins {
+    width: 100%;
+  }
+}

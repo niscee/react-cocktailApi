@@ -1,27 +1,25 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Error from "./components/Error/Error";
-import About from "./components/About/About";
-import ProductDetail from "./components/ProductDetail/ProductDetail";
-import { CocktailState } from "./context/CocktailState";
+import CoinDetail from "./components/CoinDetail/CoinDetail";
+import { CoinState } from "./context/CoinState";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from './Home';
 import "./App.css";
-import Home from "./Home";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <CocktailState>
+      <CoinState>
         <div className="container">
           <Navbar />
           <Switch>
             <Route path="/" component={Home} exact />
-            <Route path="/about" component={About} exact />
-            <Route path="/cocktail/:id" component={ProductDetail} />
+            <Route path="/coin/:id" component={CoinDetail} />
             <Route component={Error} />
           </Switch>
         </div>
-      </CocktailState>
+      </CoinState>
     </BrowserRouter>
   );
 };
