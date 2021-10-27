@@ -10,11 +10,11 @@ const CoinDetail = () => {
   const { id } = useParams();
   const context = useContext(MyContext);
   const history = useHistory();
-  const { fetchSingleCoin, coin,  loading } = context;
+  const { fetchSingleCoin, coin, loading } = context;
 
   useEffect(() => {
     fetchSingleCoin(id);
-  }, [id, coin]);
+  }, [id]);
 
   if (!coin) {
     return <h2>Sorry Something went wrong</h2>;
