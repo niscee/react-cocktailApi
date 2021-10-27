@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import "./SingleCoin.css";
 
 const SingleCoin = ({ coin }) => {
+
   return (
-    <>
+    <tbody>
       <tr>
         <td>
           <img
@@ -22,7 +23,7 @@ const SingleCoin = ({ coin }) => {
           <Link to={`coin/${coin.id}`}><button>View</button></Link>
         </td>
       </tr>
-    </>
+    </tbody>
   );
 };
 

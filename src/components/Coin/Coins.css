@@ -1,14 +1,11 @@
 .item-container {
   width: 85%;
   margin: 40px auto;
-  grid-gap: 20px;
   color: black;
-  position: relative;
-  height: 750px;
-  overflow: auto;
+  height: 600px;
   font-size: 0.9rem;
+  overflow: auto;
 }
-
 
 #coins {
   width: 100%;
@@ -30,13 +27,29 @@ thead {
   padding: 8px;
 }
 
+.button-container {
+  display: flex;
+  width: 10%;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.button-container button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
 #coins td,
 #coins tr {
   text-align: center;
 }
-
-
 
 #coins tr:hover {
   background-color: #ddd;
@@ -44,7 +57,7 @@ thead {
 
 @media screen and (min-width: 900px) and (max-width: 1000px) {
   .item-container {
-    width: 95%;
+    width: 100%;
   }
 
   #coins {
@@ -53,11 +66,19 @@ thead {
 }
 
 @media screen and (max-width: 900px) {
+  .button-container {
+    width: 20%;
+  }
+
   .item-container {
-    width: 95%;
+    width: 100%;
   }
 
   #coins {
     width: 100%;
+  }
+
+  .button-container button {
+    padding: 15px 25px;
   }
 }

@@ -4,12 +4,13 @@ import { MyContext } from "../../context/CoinState";
 import "./CoinDetail.css";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { useHistory } from "react-router-dom";
+import Loading from "../Coin/Loading/Loading";
 
 const CoinDetail = () => {
   const { id } = useParams();
   const context = useContext(MyContext);
   const history = useHistory();
-  const { fetchSingleCoin, coin } = context;
+  const { fetchSingleCoin, coin,  loading } = context;
 
   useEffect(() => {
     fetchSingleCoin(id);
@@ -19,11 +20,10 @@ const CoinDetail = () => {
     return <h2>Sorry Something went wrong</h2>;
   }
 
-  console.log(coin);
-
   return (
     <div className="singleItemDetail-container">
-      <div>
+      {loading && <Loading />}
+      <div className="coin-button">
         <img
           src={coin.image.large}
           alt="coin"

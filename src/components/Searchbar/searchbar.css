@@ -1,0 +1,32 @@
+.searchbar-container {
+  background-color: #282c34;
+  padding: 20px;
+}
+
+.searchbar-container div {
+  width: 60%;
+  margin: auto;
+}
+
+.searchbar-container div input {
+  width: 90%;
+  height: 24px;
+}
+
+.searchbar-container div button {
+  padding: 5px;
+  background-color: #04aa6d;
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .searchbar-container div {
+    width: 100%;
+  }
+  .searchbar-container div input {
+    width: 100%;
+  }
+  .searchbar-container div button {
+    width: 100%;
+  }
+}

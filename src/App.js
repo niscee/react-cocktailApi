@@ -4,8 +4,9 @@ import Error from "./components/Error/Error";
 import CoinDetail from "./components/CoinDetail/CoinDetail";
 import { CoinState } from "./context/CoinState";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from './Home';
+import Home from "./Home";
 import "./App.css";
+import Searchbar from "./components/Searchbar/Searchbar";
 
 const App = () => {
   return (
@@ -14,7 +15,16 @@ const App = () => {
         <div className="container">
           <Navbar />
           <Switch>
-            <Route path="/" component={Home} exact />
+            <Route
+              path="/"
+              exact
+              render={() => (
+                <>
+                  <Searchbar />
+                  <Home />
+                </>
+              )}
+            />
             <Route path="/coin/:id" component={CoinDetail} />
             <Route component={Error} />
           </Switch>
@@ -23,7 +33,5 @@ const App = () => {
     </BrowserRouter>
   );
 };
-
-
 
 export default App;

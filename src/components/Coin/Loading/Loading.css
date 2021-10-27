@@ -1,13 +1,19 @@
-.loading-container{
-    width: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    z-index: 100;
-    top: 30%;
-    left: 0;
-    right: 0; 
-    text-align: center;
+.loading-container {
+  width: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
-
+@media screen and (max-widht: 1000px) {
+  .loading-container {
+    top: 80%;
+    left: 0;
+    right: 0;
+  }
+}

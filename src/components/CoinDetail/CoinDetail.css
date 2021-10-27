@@ -1,6 +1,6 @@
 .singleItemDetail-container {
   text-align: center;
-  margin: 80px auto 0px;
+  margin: 20px auto 0px;
   width: 70%;
   display: grid;
   grid-template-columns: 20% 80%;
@@ -34,7 +34,7 @@
 }
 
 #cprice {
-  background-color: black;
+  background-color: blue;
   color: white;
   padding: 5px;
 }
@@ -51,21 +51,39 @@
   padding: 5px;
 }
 
-.singleItemDetail-container div button {
+.singleItemDetail-container .coin-button p{
+  padding: 5px;
+  width: 100%;
+  font-weight: bold;
+}
+
+
+.singleItemDetail-container .coin-button button{
   padding: 5px;
   width: 100%;
 }
 
+
 .coin-description {
   overflow: auto;
-  height: 600px;
+  height: 650px;
+  line-height: 1.8;
 }
 
-@media screen and (max-width: 900px) {
+.singleItemDetail-container .coin-button p:hover{
+  transform: scale(1.2, 1.2);
+}
+
+@media screen and (max-width: 1000px) {
   .singleItemDetail-container {
     grid-template-columns: 100%;
     margin: 20px auto 0px;
-    width: 90%;
+    width: 85%;
     padding: 0px;
+  }
+
+  .coin-description {
+    height: 300px;
+    line-height: 1.8;
   }
 }

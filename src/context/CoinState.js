@@ -7,28 +7,48 @@ export const CoinState = (props) => {
   const [loading, setLoading] = useState(false);
   const [coins, setCoins] = useState([]);
   const [coin, setCoin] = useState(null);
+  const [searchkey, setSearchkey] = useState("");
+  const [page, setPage] = useState(2);
 
   const GET_COINS_URL =
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&sparkline=false";
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=10&page=";
 
   const GET_SINGLE_COIN_URL = "https://api.coingecko.com/api/v3/coins/";
 
-  // fetching api.
+
+  // get searched coin.
+  const searchCoin = async () => {
+    const response = await axios.get(
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&ids=${searchkey}&per_page=10&page=1&s`
+    );
+    const items = await response.data;
+    if (items) {
+      setCoins([...items]);
+    } else {
+      setCoins([]);
+    }
+  };
+
+  // fetching coins.
   const fetchCoins = async () => {
     try {
-      const response = await axios.get(`${GET_COINS_URL}`);
-      const items = await response.data;
-      if (items) {
-        setCoins([...items]);
+      if (!searchkey) {
+        const response = await axios.get(`${GET_COINS_URL}${page}&sparkline=false`);
+        const items = await response.data;
+        if (items) {
+          setCoins([...items]);
+        } else {
+          setCoins([]);
+        }
       } else {
-        setCoins([]);
+        searchCoin();
       }
     } catch (err) {
       console.log(err);
     }
   };
 
-  // fetching data filter by Id
+  // fetching coin based on id.
   const fetchSingleCoin = async (id) => {
     try {
       const response = await axios.get(
@@ -45,13 +65,18 @@ export const CoinState = (props) => {
     }
   };
 
+  // setting up user search item.
+  const changeTerm = (val) => {
+    setSearchkey(val);
+  };
+
   useEffect(() => {
     setLoading(true);
     fetchCoins();
     setTimeout(() => {
       setLoading(false);
     }, 400);
-  }, []);
+  }, [searchkey, page]);
 
   return (
     <MyContext.Provider
@@ -61,6 +86,10 @@ export const CoinState = (props) => {
         coins,
         fetchSingleCoin,
         coin,
+        changeTerm,
+        searchkey,
+        fetchCoins,
+        setPage
       }}
     >
       {props.children}
